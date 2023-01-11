@@ -6,17 +6,21 @@ const parede = document.querySelector("#box");
 async function getData(link) {
     const Data = await fetch(link);
     const DataJson = await Data.json();
-    console.log(DataJson.dados);
+    return DataJson.dados;
+}
+
+async function mainFunction() {
+    const result = await getData(url);
     for (let a = 0; a < 30; a++) {
-        let div = document.createElement("div");
         let img = document.createElement("img");
-        console.log(DataJson.dados[a].id);
-        img.src = DataJson.dados[a].urlFoto;
-        console.log(img);
+        let div = document.createElement("div");
+        let name = document.createElement("h6");
+        img.src = result[a].urlFoto;
+        img.className = "foto_deputado";
+        div.className = "card_deputado";
         div.appendChild(img);
-        console.log(div);
-        parede.insertAdjacentElement("beforebegin",div);
+        parede.insertAdjacentElement("afterbegin",div);
     }
 }
 
-getData(url);
+mainFunction()

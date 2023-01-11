@@ -1,0 +1,28 @@
+h1 {
+    text-align: center;
+}
+
+#box {
+    width: 800px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.foto_deputado {
+    width: 90px;
+    height: 120px;
+    display: block;
+    margin: auto;
+}
+
+.card_deputado {
+    width: 120px;
+    height: 140px;
+    padding-top: 6px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px black;
+    background-color: whitesmoke;
+    margin: 4px;
+}
+
