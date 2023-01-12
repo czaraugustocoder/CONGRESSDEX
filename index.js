@@ -6,19 +6,25 @@ const parede = document.querySelector("#box");
 async function getData(link) {
     const Data = await fetch(link);
     const DataJson = await Data.json();
+    console.log(DataJson.dados);
     return DataJson.dados;
 }
 
 async function mainFunction() {
     const result = await getData(url);
-    for (let a = 0; a < 30; a++) {
+    for (let a = 0; a < 100; a++) {
         let img = document.createElement("img");
         let div = document.createElement("div");
-        let name = document.createElement("h6");
+        let name = document.createElement("h5");
+        let partido = document.createElement("h6")
         img.src = result[a].urlFoto;
+        name.innerHTML = result[a].nome;
+        partido.innerHTML = result[a].siglaPartido;
         img.className = "foto_deputado";
         div.className = "card_deputado";
         div.appendChild(img);
+        div.appendChild(name);
+        div.appendChild(partido);
         parede.insertAdjacentElement("afterbegin",div);
     }
 }

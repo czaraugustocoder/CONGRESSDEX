@@ -9,20 +9,28 @@ h1 {
     flex-wrap: wrap;
 }
 
-.foto_deputado {
-    width: 90px;
-    height: 120px;
-    display: block;
-    margin: auto;
-}
-
 .card_deputado {
     width: 120px;
-    height: 140px;
+    height: 160px;
     padding-top: 6px;
     border-radius: 10px;
     box-shadow: 0px 0px 4px black;
     background-color: whitesmoke;
     margin: 4px;
+}
+
+h5 {
+    margin: 4px 0px 0px 4px;
+}
+
+h6 {
+    margin: 2px 0px 0px 4px;
+}
+
+.foto_deputado {
+    width: 90px;
+    height: 120px;
+    display: block;
+    margin: 0px auto 0px auto;
 }
 
