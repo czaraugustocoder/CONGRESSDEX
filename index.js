@@ -26,7 +26,16 @@ async function mainFunction() {
         div.appendChild(name);
         div.appendChild(partido);
         parede.insertAdjacentElement("afterbegin",div);
+        document.querySelector(".card_deputado").addEventListener("click", pooUp);
     }
 }
 
+
+
+function pooUp() {
+    window.alert("Apertou o Botão");
+}
+
+
 mainFunction()
+
