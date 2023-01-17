@@ -12,7 +12,7 @@ async function getData(link) {
 
 async function mainFunction() {
     const result = await getData(url);
-    for (let a = 0; a < 5; a++) {
+    for (let a = 0; a < result.length; a++) {
         let img = document.createElement("img");
         let div = document.createElement("div");
         let name = document.createElement("h5");
