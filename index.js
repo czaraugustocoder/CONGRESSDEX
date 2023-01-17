@@ -42,9 +42,34 @@ async function mainFunction() {
 }
 
 async function getDepData(urlDep){
+    //Encapsulação dos dados
     let depData = await fetch(urlDep);
     let depDataJson = await depData.json()
     console.log(depDataJson);
+    let nameDep = depDataJson.dados.nomeCivil
+    console.log(nameDep);
+    let dataNasc = depDataJson.dados.dataNascimento;
+    console.log(dataNasc);
+    let escolDep = depDataJson.dados.escolaridade;
+    console.log(escolDep);
+    let estDep = depDataJson.dados.ufNascimento;
+    let munDep = depDataJson.dados.municipioNascimento;
+    let naturalidade = `${munDep} (${estDep})`;
+    console.log(naturalidade); 
+    var newPage = window.open("");
+    newPage.document.write(
+    `<html>
+    <head>
+    <title>${nameDep}</title>
+    <link rel="stylesheet" href="deputado.css">
+    </head>
+    <body>
+    <h1>${nameDep}</h1>
+    <h3>Naturalidade: ${naturalidade}</h3>
+    <h3>Escolaridade: ${escolDep}</h3>
+    </body>
+    </html>`
+    );
 }
 
 
