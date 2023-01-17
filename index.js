@@ -12,7 +12,7 @@ async function getData(link) {
 
 async function mainFunction() {
     const result = await getData(url);
-    for (let a = 0; a < 100; a++) {
+    for (let a = 0; a < 5; a++) {
         let img = document.createElement("img");
         let div = document.createElement("div");
         let name = document.createElement("h5");
@@ -35,8 +35,16 @@ async function mainFunction() {
         element.addEventListener("click", () => {
             let elementId = element.id;
             console.log(elementId);
+            linkDep = "https://dadosabertos.camara.leg.br/api/v2/deputados/"+elementId;
+            getDepData(linkDep);
         })
     }
+}
+
+async function getDepData(urlDep){
+    let depData = await fetch(urlDep);
+    let depDataJson = await depData.json()
+    console.log(depDataJson);
 }
 
 
