@@ -22,18 +22,21 @@ async function mainFunction() {
         partido.innerHTML = result[a].siglaPartido;
         img.className = "foto_deputado";
         div.className = "card_deputado";
+        div.setAttribute("id",result[a].id);
         div.appendChild(img);
         div.appendChild(name);
         div.appendChild(partido);
+        console.log(div)
         parede.insertAdjacentElement("afterbegin",div);
-        document.querySelector(".card_deputado").addEventListener("click", pooUp);
     }
-}
-
-
-
-function pooUp() {
-    window.alert("Apertou o Botão");
+    let cards = document.querySelectorAll(".card_deputado");
+    for (let c = 0; c < cards.length; c++){
+        let element = cards[c];
+        element.addEventListener("click", () => {
+            let elementId = element.id;
+            console.log(elementId);
+        })
+    }
 }
 
 
