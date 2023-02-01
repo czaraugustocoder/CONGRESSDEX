@@ -2,7 +2,7 @@ const url = "https://dadosabertos.camara.leg.br/api/v2/deputados?ordem=ASC&orden
 
 const parede = document.querySelector("#box");
 
-
+//Pegando dados da API principal
 async function getData(link) {
     const Data = await fetch(link);
     const DataJson = await Data.json();
@@ -29,6 +29,7 @@ async function mainFunction() {
         console.log(div)
         parede.insertAdjacentElement("afterbegin",div);
     }
+    // adição de eventlistenner nos cards
     let cards = document.querySelectorAll(".card_deputado");
     for (let c = 0; c < cards.length; c++){
         let element = cards[c];
@@ -55,7 +56,8 @@ async function getDepData(urlDep){
     let estDep = depDataJson.dados.ufNascimento;
     let munDep = depDataJson.dados.municipioNascimento;
     let naturalidade = `${munDep} (${estDep})`;
-    console.log(naturalidade); 
+    console.log(naturalidade);
+    //Criação da Página nova 
     let newPage = window.open("");
     newPage.document.write(
     `<html>
