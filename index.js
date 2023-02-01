@@ -56,7 +56,7 @@ async function getDepData(urlDep){
     let munDep = depDataJson.dados.municipioNascimento;
     let naturalidade = `${munDep} (${estDep})`;
     console.log(naturalidade); 
-    var newPage = window.open("");
+    let newPage = window.open("");
     newPage.document.write(
     `<html>
     <head>
