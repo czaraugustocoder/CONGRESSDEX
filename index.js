@@ -12,7 +12,7 @@ async function getData(link) {
 
 async function mainFunction() {
     const result = await getData(url);
-    for (let a = 0; a < 30; a++) {
+    for (let a = 0; a < result.length; a++) {
         let img = document.createElement("img");
         let div = document.createElement("div");
         let name = document.createElement("h5");
@@ -59,6 +59,15 @@ async function getDepData(urlDep){
 
     let name_dep_card = document.querySelector("#name_dep_card");
     name_dep_card.innerHTML = depDataJson.dados.ultimoStatus.nomeEleitoral;
+
+    let name_partido = document.querySelector("#name_partido");
+    name_partido.innerHTML = `Partido: ${depDataJson.dados.ultimoStatus.siglaPartido}`;
+
+    let name_civil = document.querySelector("#name_civil");
+    name_civil.innerHTML = `Nome Civil: ${depDataJson.dados.nomeCivil}`;
+
+    let email = document.querySelector("#email");
+    email.innerHTML = `E-mail: ${depDataJson.dados.ultimoStatus.email}`;
 
     openColse();
    
