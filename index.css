@@ -53,7 +53,15 @@ h6 {
 
 #popup-1.active {
     display: block;
+    background-color: whitesmoke;
+    width: 320px;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    top:50%;
+    margin-left: 50%;
 }
+
 
 #moldura {
     padding-top: 15px;
@@ -69,6 +77,16 @@ h6 {
     display: block;
     margin: auto;
     border-radius: 50%;
+}
+
+.close-btn {
+    font-weight: bolder;
+    width: 22px;
+    height: 22px;
+    background-color: red;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 

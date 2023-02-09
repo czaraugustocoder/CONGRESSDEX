@@ -42,6 +42,8 @@ async function mainFunction() {
     }
 }
 
+const botao = document.querySelector("#popup-1");
+
 async function getDepData(urlDep){
     
     let depData = await fetch(urlDep);
@@ -51,11 +53,23 @@ async function getDepData(urlDep){
     let imagem_dep = document.querySelector("#imagem_dep");
     imagem_dep.src = depDataJson.dados.ultimoStatus.urlFoto;
 
-    const botao = document.getElementById("popup-1");
+    let name_dep_card = document.querySelector("#name_dep_card");
+    name_dep_card.innerHTML = depDataJson.dados.ultimoStatus.nomeEleitoral;
+
+    
     botao.classList.toggle('active');
+
+    let fechar = document.querySelector(".close-btn");
+
+    fechar.addEventListener("onclick",close());
     
 }
 
+
+
+function close(){
+    console.log("funciona");
+}
 
 
 
