@@ -55,28 +55,43 @@ h6 {
     display: block;
     background-color: whitesmoke;
     width: 320px;
+    height: 400px;
     border-radius: 10px;
     padding: 10px;
-    position: absolute;
-    top:50%;
-    margin-left: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: 100;
+    transform-style: all;
+    transition-duration: 1s;
+    box-shadow: 0px 0px 5px black;
 }
 
 
 #moldura {
-    padding-top: 15px;
-    width: 100px;
-    height: 100px;
+    padding-top: 4px;
+    width: 140px;
+    height: 125px;
     border-radius: 50%;
     background-color: white;
     margin: auto;
+    border-style: solid;
+    border-color: burlywood;
+    box-shadow: 0px 0px 2px black;
 }
 
 #imagem_dep {
-    width: 60px;
+    width: 90px;
     display: block;
     margin: auto;
     border-radius: 50%;
+}
+
+#name_dep_card {
+    text-align: center;
 }
 
 .close-btn {

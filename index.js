@@ -31,6 +31,7 @@ async function mainFunction() {
     }
     // adição de eventlistenner nos cards
     let cards = document.querySelectorAll(".card_deputado");
+    console.log(cards);
     for (let c = 0; c < cards.length; c++){
         let element = cards[c];
         element.addEventListener("click", () => {
@@ -42,7 +43,10 @@ async function mainFunction() {
     }
 }
 
-const botao = document.querySelector("#popup-1");
+function openColse(){
+    const botao = document.querySelector("#popup-1");
+    botao.classList.toggle('active');
+}
 
 async function getDepData(urlDep){
     
@@ -56,13 +60,8 @@ async function getDepData(urlDep){
     let name_dep_card = document.querySelector("#name_dep_card");
     name_dep_card.innerHTML = depDataJson.dados.ultimoStatus.nomeEleitoral;
 
-    
-    botao.classList.toggle('active');
-
-    let fechar = document.querySelector(".close-btn");
-
-    fechar.addEventListener("onclick",close());
-    
+    openColse();
+   
 }
 
 
